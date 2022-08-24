@@ -13,17 +13,17 @@ export const BlindingLights = () => {
 	
 	//declaring the handleFunctions to turn on/off the lights
 	const handleRedTurnedOn = (event) => {
-		setRedTurnedOn (true)
+		setRedTurnedOn (prev => !prev)
 		setYellowTurnedOn (false)
 		setGreenTurnedOn (false)
 	}
 	const handleYellowTurnedOn = (event) => {
-		setYellowTurnedOn (true)
+		setYellowTurnedOn (prev => !prev)
 		setRedTurnedOn (false)
 		setGreenTurnedOn (false)
 	}
 	const handleGreenTurnedOn = (event) => {
-		setGreenTurnedOn (true)
+		setGreenTurnedOn (prev => !prev)
 		setYellowTurnedOn (false)
 		setRedTurnedOn (false)
 	}	
@@ -40,15 +40,15 @@ export const BlindingLights = () => {
 		counter++
 		console.log(counter)
 		if(counter < 11){
-			handleGreenTurnedOn()
+			setGreenTurnedOn (true)
 			console.log("verde")
 		}
 		if(counter > 10 && counter < 21){
-			handleYellowTurnedOn()
+			setYellowTurnedOn(true)
 			console.log("amarillo")
 		}
 		if(counter > 20 && counter < 30){
-			handleRedTurnedOn()
+			setRedTurnedOn(true)
 			console.log("rojo")
 		}
 		if(counter == 30){
