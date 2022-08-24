@@ -4,9 +4,10 @@ import ReactDOM from "react-dom";
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
+import { BlindingLights } from "./component/TrafficLight.jsx";
 
 //import your own components
-import Home from "./component/home.jsx";
+
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(<BlindingLights />, document.querySelector("#app"));
