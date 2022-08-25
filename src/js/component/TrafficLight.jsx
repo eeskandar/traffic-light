@@ -40,16 +40,19 @@ export const BlindingLights = () => {
 		counter++
 		console.log(counter)
 		if(counter < 11){
+			setRedTurnedOn (false)
+			setYellowTurnedOn (false)
 			setGreenTurnedOn (true)
-			console.log("verde")
 		}
 		if(counter > 10 && counter < 21){
-			setYellowTurnedOn(true)
-			console.log("amarillo")
+			setRedTurnedOn (false)
+			setYellowTurnedOn (true)
+			setGreenTurnedOn (false)
 		}
 		if(counter > 20 && counter < 30){
-			setRedTurnedOn(true)
-			console.log("rojo")
+			setRedTurnedOn (true)
+			setYellowTurnedOn (false)
+			setGreenTurnedOn (false)
 		}
 		if(counter == 30){
 			counter = 0
@@ -94,4 +97,3 @@ export const BlindingLights = () => {
 		</div>
 	);
 };
-
